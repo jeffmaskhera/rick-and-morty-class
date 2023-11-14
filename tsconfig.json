@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // La versión de ECMAScript a la que compilar tu código (puede ser ES5, ES6, ESNext, etc.)
+    "module": "ESNext", // El sistema de módulos a utilizar (puede ser CommonJS, ESNext, etc.)
+    "strict": true, // Habilitar estricta comprobación de tipos
+    "jsx": "react", // Tipo de JSX a utilizar (puede ser react o react-native)
+    "esModuleInterop": true, // Habilitar interoperabilidad con módulos de estilo CommonJS
+    "skipLibCheck": true, // Omitir comprobación de tipos en archivos de declaración
+    "forceConsistentCasingInFileNames": true, // Forzar consistencia en mayúsculas y minúsculas en nombres de archivos
+    "outDir": "./dist", // Directorio de salida para los archivos compilados
+    "strictNullChecks": true, // Habilitar comprobación estricta de valores nulos
+    "noImplicitAny": true, // Evitar el uso de tipos implícitos 'any'
+    "noImplicitThis": true, // Habilitar comprobación de tipos para 'this'
+    "noImplicitReturns": true, // Habilitar comprobación de tipos de retorno de función
+    "noUnusedLocals": false, // Detectar variables locales no utilizadas
+    "noUnusedParameters": true, // Detectar parámetros de función no utilizados
+    "baseUrl": "./src", // Ruta base para las importaciones absolutas (ajusta según tu estructura de carpetas)
+    "paths": {
+      "@/*": ["*"] // Configuración de alias para importaciones absolutas (personaliza según tus necesidades)
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"], // Archivos que deben ser incluidos en la compilación (ajusta según tu estructura de carpetas)
+  "exclude": ["node_modules"] // Carpetas o archivos excluidos de la compilación
+}
