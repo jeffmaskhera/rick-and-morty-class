@@ -15,7 +15,6 @@ const Paginator: FC<Props> =({currentPage, paginatorSettings})=> {
             if (currentPage !== 1) {
                 paginatorSettings(currentPage - 1 )
             }
-
         }
     }
 

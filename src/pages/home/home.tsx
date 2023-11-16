@@ -34,7 +34,6 @@ const Home =()=> {
     return (
         <div>
             Home Rick And Morty Characters
-
             <div>
                 {
                     characters && characters.length > 0 &&

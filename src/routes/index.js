@@ -6,8 +6,6 @@ import Home from "../pages/home/home";
 
 const Routes =()=> {
 
-
-
     return (
         <BrowserRouter>
             <Switch>

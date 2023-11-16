@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "moduleResolution": "node",
     "target": "ESNext", // La versión de ECMAScript a la que compilar tu código (puede ser ES5, ES6, ESNext, etc.)
     "module": "ESNext", // El sistema de módulos a utilizar (puede ser CommonJS, ESNext, etc.)
     "strict": true, // Habilitar estricta comprobación de tipos
@@ -17,8 +18,9 @@
     "baseUrl": "./src", // Ruta base para las importaciones absolutas (ajusta según tu estructura de carpetas)
     "paths": {
       "@/*": ["*"] // Configuración de alias para importaciones absolutas (personaliza según tus necesidades)
-    }
+    },
+    "types": ["node"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"], // Archivos que deben ser incluidos en la compilación (ajusta según tu estructura de carpetas)
+  "include": ["src/**/*.ts", "src/**/*.tsx", "node_modules/@types"], // Archivos que deben ser incluidos en la compilación (ajusta según tu estructura de carpetas)
   "exclude": ["node_modules"] // Carpetas o archivos excluidos de la compilación
 }
