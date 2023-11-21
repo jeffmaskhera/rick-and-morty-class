@@ -16,10 +16,8 @@
     "noUnusedLocals": false, // Detectar variables locales no utilizadas
     "noUnusedParameters": true, // Detectar parámetros de función no utilizados
     "baseUrl": "./src", // Ruta base para las importaciones absolutas (ajusta según tu estructura de carpetas)
-    "paths": {
-      "@/*": ["*"] // Configuración de alias para importaciones absolutas (personaliza según tus necesidades)
-    },
-    "types": ["node"]
+    "types": ["node"],
+
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "node_modules/@types"], // Archivos que deben ser incluidos en la compilación (ajusta según tu estructura de carpetas)
   "exclude": ["node_modules"] // Carpetas o archivos excluidos de la compilación
