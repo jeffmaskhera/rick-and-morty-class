@@ -1,9 +1,12 @@
 import './assets/global.scss';
 import Routes from "./routes";
+import { StoreProvider } from './Context'
 
 function App() {
   return (
-    <Routes/>
+      <StoreProvider>
+        <Routes/>
+      </StoreProvider>
   );
 }
 
