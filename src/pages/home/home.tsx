@@ -2,7 +2,7 @@ import React, {useMemo} from 'react';
 import { useState, useEffect } from 'react'
 import {getCharacters} from "../../domain/characters/characters.informer";
 import Paginator from "../../components/paginator/paginator";
-import {CharactersModel} from "@/domain/characters/characters.model";
+import {CharactersModel} from "../../domain/characters/characters.model";
 import ItemCharacter from "../../components/item-character/item-character";
 
 
