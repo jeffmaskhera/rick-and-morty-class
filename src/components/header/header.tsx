@@ -7,12 +7,15 @@ import {RoutesEnum} from "../../routes/routes.enum";
 
 const Header =()=> {
     return (
-        <header>
-            <ul>
-                <Link to={RoutesEnum.Home}>Home</Link>
-                <Link to={RoutesEnum.Favorites}>Favorites</Link>
-            </ul>
-        </header>
+        <>
+            <header>
+                <div className="links">
+                    <Link to={RoutesEnum.Home}>Home</Link>
+                    <Link to={RoutesEnum.Favorites}>Favorites</Link>
+                </div>
+            </header>
+            <div className="empty-space-header"></div>
+        </>
     )
 }
 
