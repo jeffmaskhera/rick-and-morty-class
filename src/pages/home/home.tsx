@@ -2,18 +2,33 @@ import React, {useMemo} from 'react';
 import { useState, useEffect } from 'react'
 import {getCharacters} from "../../domain/characters/characters.informer";
 import Paginator from "../../components/paginator/paginator";
-import {CharactersModel} from "@/domain/characters/characters.model";
+
 import ItemCharacter from "../../components/item-character/item-character";
+import {CharactersModel} from "../../domain/characters/characters.model";
+import Modal from "../../components/modal/modal";
+import Spinner from "../../components/spinner/spinner";
+
 
 
 const Home =()=> {
 
     const [characters, setCharacters] = useState<CharactersModel[]>()
+    const [selectCharacter, setSelectCharacter] = useState<CharactersModel>(new CharactersModel())
     const [page, setPage] = useState<number>(1)
+    const [showModal, setShowModal] = useState<boolean>(false)
+    const [showSpinner, setShowSpinner] = useState<boolean>(true)
 
     const getInfo = async (page: number)=> {
+        setShowSpinner(true)
+
         const response = await getCharacters(page)
+        // const response = await new Promise<CharactersModel[]>((resolve) => {
+        //     setTimeout(() => {
+        //         resolve(getCharacters(page));
+        //     }, 1000); // Simula una demora de 2 segundos
+        // });
         setCharacters(response)
+        setShowSpinner(false)
     }
 
     const paginatorSettings =(num: number)=> {
@@ -31,35 +46,51 @@ const Home =()=> {
         />
     }, [page])
 
+    const settingCharacterSelect =(select: CharactersModel)=> {
+        setSelectCharacter(select)
+
+    }
+
+    const actionModal =()=> {
+        setShowModal(!showModal)
+    }
 
 
     return (
-        <div>
-            Home Rick And Morty Characters
+        <div className="home-page">
 
-            <div>
-                {
-                    characters && characters.length > 0 &&
-                    <div>
-                        {
-                            characters.map((item, key)=> {
-                                return (
-                                    // <div key={key}>
-                                    //     {item?.['name']}
-                                    // </div>
-                                    <div  key={key}>
-                                        <ItemCharacter item={item}/>
-                                    </div>
+            {showSpinner && <Spinner/>}
 
 
-                                )
-                            })
-                        }
-                    </div>
-                }
-            </div>
+            <h1>Home Rick And Morty Characters</h1>
+
+            {
+                characters && characters.length > 0 &&
+                <div className="home-page__grid-character">
+                    {
+                        characters.map((item, key)=> {
+                            return (
+                                <ItemCharacter
+                                    item={item}
+                                    key={key}
+                                    settingCharacterSelect={settingCharacterSelect}
+                                    actionModal={actionModal}
+                                />
+                            )
+                        })
+                    }
+                </div>
+            }
 
             {renderPaginator}
+
+            {
+                showModal &&
+                <Modal
+                    selectCharacter={selectCharacter}
+                    closeModal={actionModal}
+                />
+            }
 
 
 

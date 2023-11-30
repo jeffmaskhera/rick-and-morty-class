@@ -21,9 +21,18 @@ const StoreProvider: React.FC<{children: ReactNode}> = ({children}) => {
 
     const [favoriteCharacters, setFavoriteCharacters] = useState<CharactersModel[]>([]);
 
-    // useEffect(()=> {
-    //     const storedFa
-    // }, [])
+    // Cargar datos desde el localStorage al montar el componente
+    useEffect(() => {
+        const storedFavorites = localStorage.getItem('favoriteCharacters');
+        if (storedFavorites) {
+            setFavoriteCharacters(JSON.parse(storedFavorites));
+        }
+    }, []);
+
+    // Guardar datos en el localStorage cada vez que se actualiza favoriteCharacters
+    useEffect(() => {
+        localStorage.setItem('favoriteCharacters', JSON.stringify(favoriteCharacters));
+    }, [favoriteCharacters]);
 
 
     return (

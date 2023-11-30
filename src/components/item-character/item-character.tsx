@@ -4,9 +4,11 @@ import {Store} from '../../Context'
 
 interface Props {
     item: CharactersModel;
+    settingCharacterSelect: (item: CharactersModel)=> void
+    actionModal: ()=> void
 }
 
-const ItemCharacter: FC<Props> =({item})=> {
+const ItemCharacter: FC<Props> =({item, settingCharacterSelect, actionModal})=> {
 
     const context = useContext(Store);
 
@@ -16,18 +18,25 @@ const ItemCharacter: FC<Props> =({item})=> {
         setFavoriteCharacters( (prevFavorites) => [...prevFavorites, item])
     }
 
-    console.log("favorites", favoriteCharacters)
+    const actionSetItem =(item: CharactersModel)=> {
+        settingCharacterSelect(item)
+        actionModal()
+    }
 
 
     return (
-        <div className="item-character">
-            <h2>{item?.name}</h2>
+        <div className="item-character" onClick={()=> actionSetItem(item)}>
             <div className="item-character__image">
                 <img src={item?.urlImage} alt={item?.name} />
             </div>
-            <button onClick={()=>saveFavoriteCharacter(item)}>
-                Agregar a favoritos
-            </button>
+            <div className="item-character__info">
+                <h2>{item?.name}</h2>
+            </div>
+
+
+            {/*<button className="button-style" onClick={()=>saveFavoriteCharacter(item)}>*/}
+            {/*    Agregar a favoritos*/}
+            {/*</button>*/}
 
         </div>
     )

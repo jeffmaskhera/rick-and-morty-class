@@ -11,6 +11,7 @@ interface Props {
 const Paginator: FC<Props> =({currentPage, paginatorSettings})=> {
 
     const setPaginator =(type: PaginatorActionEnum)=> {
+        window.scrollTo(0, 0)
         if (type === PaginatorActionEnum.Sum) {
             paginatorSettings(currentPage + 1 )
         } else {
@@ -20,15 +21,13 @@ const Paginator: FC<Props> =({currentPage, paginatorSettings})=> {
         }
     }
 
-    console.log("paginador")
-
     return (
-        <div>
-            <button onClick={()=> setPaginator(PaginatorActionEnum.Rest)}>
+        <div className="paginator">
+            <button className="button-style style-blue" onClick={()=> setPaginator(PaginatorActionEnum.Rest)}>
                 Back
             </button>
             <h2>Numero de página {currentPage}</h2>
-            <button onClick={()=> setPaginator(PaginatorActionEnum.Sum)}>
+            <button className="button-style style-blue" onClick={()=> setPaginator(PaginatorActionEnum.Sum)}>
                 Next
             </button>
         </div>

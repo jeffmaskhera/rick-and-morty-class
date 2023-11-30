@@ -1,0 +1,69 @@
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__close-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $black-opacity;
+    z-index: 21;
+  }
+
+  &__container-modal {
+    background: $white;
+
+    z-index: 23;
+    border-radius: 8px;
+    padding: 30px;
+
+    width: 100%;
+    margin: auto;
+    position: relative;
+    max-width: 400px;
+    max-height: 400px;
+    z-index: 23;
+    border-radius: 8px;
+    padding: 30px;
+
+
+    &__close-x {
+      position: absolute;
+      right: 30px;
+      top: 20px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    &__container-info {
+      display: grid;
+      gap: 10px;
+
+      &__image {
+        width: 130px;
+        height: 130px;
+        border-radius: 100%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        };
+      }
+    }
+  }
+
+}

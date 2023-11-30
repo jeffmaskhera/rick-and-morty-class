@@ -7,4 +7,32 @@ html, body {
 
 h1, h2, h3, h4, h5, p {
   padding: 0;
+  margin: 0;
 }
+
+.button-style {
+  border-radius: 4px;
+  padding: 12px 20px;
+  cursor: pointer;
+  background: $red2;
+  color: $white;
+  border: unset;
+}
+
+.button-style:hover {
+  background: $red3;
+}
+
+.style-blue {
+  background: $blue-dark;
+}
+.style-blue:hover {
+  background: $blue-dark2;
+}
+
+
+
+
+
+
+
