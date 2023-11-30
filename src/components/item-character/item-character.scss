@@ -4,6 +4,16 @@
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
+  position: relative;
+
+  &__delete-character {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    font-size: 25px;
+    color: $red;
+    cursor: pointer;
+  }
 
   &__image {
     width: 100%;
