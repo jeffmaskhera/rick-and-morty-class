@@ -12,6 +12,7 @@ const Header =()=> {
                 <div className="links">
                     <Link to={RoutesEnum.Home}>Home</Link>
                     <Link to={RoutesEnum.Favorites}>Favorites</Link>
+                    <Link to={RoutesEnum.Contact}>Contact us</Link>
                 </div>
             </header>
             <div className="empty-space-header"></div>

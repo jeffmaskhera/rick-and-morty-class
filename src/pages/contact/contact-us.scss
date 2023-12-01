@@ -1,0 +1,9 @@
+.contact-page {
+  max-width: 1000px;
+  padding: 20px;
+  margin: auto;
+  &__grid-form {
+    display: grid;
+    gap: 30px;
+  }
+}

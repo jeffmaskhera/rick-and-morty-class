@@ -30,7 +30,34 @@ h1, h2, h3, h4, h5, p {
   background: $blue-dark2;
 }
 
+.grid-row5 {
+  display: grid;
+  gap: 5px
+}
 
+.grid-row10 {
+  display: grid;
+  gap: 10px
+}
+
+.grid-row20 {
+  display: grid;
+  gap: 20px
+}
+
+.input-text {
+  height: 48px;
+  background: $grey-light;
+  border: unset;
+  padding: 0 20px;
+  colo: $black;
+  outline: unset;
+}
+
+.input-text:not(:placeholder-shown) {
+  background: $green;
+  color: $white;
+}
 
 
 

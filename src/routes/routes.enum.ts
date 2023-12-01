@@ -1,4 +1,5 @@
 export enum RoutesEnum {
     Home = '/',
-    Favorites = '/favorite'
+    Favorites = '/favorite',
+    Contact = '/contact'
 }

@@ -16,20 +16,21 @@ const Favorites =()=> {
     console.log("favorites", favoriteCharacters)
 
     return (
-        <div className="home-page">
+        <div className="favorites-page">
 
 
             <h1>My Favorites characters</h1>
 
             {
                 favoriteCharacters && favoriteCharacters.length > 0 ?
-                <div className="home-page__grid-character">
+                <div className="favorites-page__grid-character">
                     {
                         favoriteCharacters.map((item, key)=> {
                             return (
                                 <ItemCharacter
                                     item={item}
                                     key={key}
+                                    showDelete
                                 />
                             )
                         })
