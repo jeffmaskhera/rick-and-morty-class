@@ -6,9 +6,10 @@ interface Props {
     item: CharactersModel;
     settingCharacterSelect?: (item: CharactersModel)=> void
     actionModal?: ()=> void
+    showDelete?: boolean
 }
 
-const ItemCharacter: FC<Props> =({item, settingCharacterSelect, actionModal})=> {
+const ItemCharacter: FC<Props> =({item, settingCharacterSelect, actionModal, showDelete})=> {
 
     const context = useContext(Store);
 
@@ -39,9 +40,12 @@ const ItemCharacter: FC<Props> =({item, settingCharacterSelect, actionModal})=> 
 
     return (
         <div className="item-character" onClick={()=> actionSetItem(item)}>
-            <div className="item-character__delete-character" onClick={deleteCharacter}>
-                X
-            </div>
+            {
+                showDelete &&
+                <div className="item-character__delete-character" onClick={deleteCharacter}>
+                    X
+                </div>
+            }
             <div className="item-character__image">
                 <img src={item?.urlImage} alt={item?.name} />
             </div>
