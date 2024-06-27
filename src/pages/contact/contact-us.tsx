@@ -51,8 +51,10 @@ const ContactUs =()=> {
             setTimeout(()=> {
                 setShowSpinner(false)
                 console.log("send info", form)
-            }, 4000)
+            }, 3000)
 
+        } else {
+            setShowSpinner(false)
         }
 
     }
